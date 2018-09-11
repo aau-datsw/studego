@@ -1,0 +1,6 @@
+
+# Ignore folder, but have .keep
+/output/*
+!/output/.keep
+/.bundle
+
