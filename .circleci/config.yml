@@ -1,0 +1,13 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/studego
+    docker:
+      - image: circleci/ruby:2.5.1
+    steps:
+      - checkout
+      - run: bundle install --path vendor/bundle
+      - run: ruby builder.rb > output/output.html
+      - store_artifacts:
+          path: output/
